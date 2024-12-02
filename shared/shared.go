@@ -19,6 +19,14 @@ func ReadFileContent(path string) (string, error) {
 	return string(file_content_string), err
 }
 
+func ToIntSlice(s []string) []int {
+	var result []int
+	for _, v := range s {
+		result = append(result, ToInt(v))
+	}
+	return result
+}
+
 func ToInt(s string) int {
 	i, _ := strconv.Atoi(s)
 	return i
